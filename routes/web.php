@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'InstagramController@index');
+
+Route::get('/search', 'InstagramController@search');
+
+Route::get('/favourites', 'InstagramController@favourites');
+
+Route::post('/add_to_favourites', 'InstagramController@addToFavourites');
+
+Route::post('/delete_from_favourites', 'InstagramController@deleteFromFavourites');
